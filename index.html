@@ -17,6 +17,8 @@ var marker;
 
 function initialize()	 <!--The function that runs when the HTML is first run-->
 {
+lat=position.coords.latitude();
+lng=position.coords.longitude();
 var mapProp = {		 <!--The peramiters that define what the map is like.  For example, here it centers the map to the lat long above, it has a zoom of 10, and is a roadmap-->
   center:myCenter,
   zoom:10,
