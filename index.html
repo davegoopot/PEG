@@ -6,9 +6,12 @@ src="http://maps.googleapis.com/maps/api/js">  <!-- A call to the Google Map API
 </script>
 
 <script>
-var lat=53.435288;	<!--The Latitude coordinates (For a park in London)-->
-var lng=-2.279530;	<!--The Longitude coordinates (For a park in London)-->
+var lat; <!--The Latitude degree-->
+
+var lng;	<!--The Longitude degree-->
+
 var myCenter=new google.maps.LatLng(lat, lng);	 <!--Creates a variable that makes a map with the Lat Long above-->
+
 var map;
 var marker;
 
