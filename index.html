@@ -2,19 +2,19 @@
 <html>
 <head>
 <script
-src="http://maps.googleapis.com/maps/api/js">
+src="http://maps.googleapis.com/maps/api/js">  <!-- A call to the Google Map API-->
 </script>
 
 <script>
-var lat=53.435288;
-var lng=-2.279530;
-var myCenter=new google.maps.LatLng(lat, lng);
+var lat=53.435288;	<!--The Latitude coordinates (For a park in London)-->
+var lng=-2.279530;	<!--The Longitude coordinates (For a park in London)-->
+var myCenter=new google.maps.LatLng(lat, lng);	 <!--Creates a variable that makes a map with the Lat Long above-->
 var map;
 var marker;
 
-function initialize()
+function initialize()	 <!--The function that runs when the HTML is first run-->
 {
-var mapProp = {
+var mapProp = {		 <!--The peramiters that define what the map is like.  For example, here it centers the map to the lat long above, it has a zoom of 10, and is a roadmap-->
   center:myCenter,
   zoom:10,
   mapTypeId:google.maps.MapTypeId.ROADMAP
@@ -22,7 +22,7 @@ var mapProp = {
 
  map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
-marker=new google.maps.Marker({
+marker=new google.maps.Marker({	<!--Sets a marker at the lat long above-->
   position:myCenter,
   });
 
@@ -31,16 +31,16 @@ marker.setMap(map);
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
-function move_right()
+function move_right()	 <!--When the map is clicked, the marker moves by 0, 0.05 and it says "The marker has been moved"-->
 {
 	lng = lng +0.05
 	marker.setPosition( new google.maps.LatLng( lat, lng ) );
-	alert("sup")
+	alert("The marker has been moved")
 }
 </script>
 </head>
 
 <body>
-<div id="googleMap" style="width:500px;height:380px;" onclick=move_right()></div>
+<div id="googleMap" style="width:500px;height:380px;" onclick=move_right()></div>	<!--This sets the size of the map.  It also states that when it is clicked it runs the function that moves it to the right-->
 </body>
 </html>
